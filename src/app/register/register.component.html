@@ -1,0 +1,46 @@
+<div style='text-align: center;'>
+<form class="example-form">
+<mat-card>
+<p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Nome completo</mat-label>
+      <input matInput placeholder="nome">
+    </mat-form-field>
+  </p>
+  <div>
+      <label>Sexo:  </label>
+      <mat-radio-group formControlName="floatLabel">
+        <br/>
+        <mat-radio-button value="auto">Masculino </mat-radio-button>
+        <mat-radio-button value="always">Femino </mat-radio-button>
+        <mat-radio-button value="never">Outro</mat-radio-button>
+      </mat-radio-group>
+  </div>
+  <br/>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome de usuário</mat-label>
+      <input #login matInput placeholder="login">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input #senha matInput placeholder="senha"  [type]="hide ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Confirme a senha</mat-label>
+      <input #senhaconfirmada matInput placeholder=""  [type]="hide ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+  </p>
+</mat-card>
+</form>
+<br/>
+<button mat-raised-button (click)="registra(login.value, senha.value, senhaconfirmada.value);">
+  Registrar
+</button>
+</div>

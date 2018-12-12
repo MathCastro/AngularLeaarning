@@ -1,0 +1,23 @@
+<div style='text-align: center;'>
+<form class="example-form">
+  <mat-card>
+  <mat-form-field class="example-full-width">
+    <input #login matInput placeholder="Login">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input #senha matInput placeholder="Senha" [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field>
+</mat-card>
+</form>
+<br/>
+<button mat-raised-button (click)="loga(login.value, senha.value);">
+  Logar
+</button>
+<button mat-button style="color:blue">
+    <nav>
+        <a routerLink="/register">Registre-se</a>
+    </nav>
+  </button>
+</div>
