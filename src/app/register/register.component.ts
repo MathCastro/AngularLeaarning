@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { USUARIOS } from '../mock-usuarios';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { userInfo } from 'os';
 import { SusersService } from '../susers.service'
 
 @Component({
