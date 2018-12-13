@@ -1,9 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened class="barra-lateral">
-      <nav>
+      <nav><button>
           <a class="icone" routerLink="/login"><mat-icon>home</mat-icon></a>
-      </nav>
+        </button></nav>
+      <nav><button>
+            <a class="icone" (click)="goBack()"><mat-icon>arrow_back</mat-icon></a>
+        </button>
+        </nav>
       
   </mat-drawer>
   <mat-drawer-content>

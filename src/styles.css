@@ -12,3 +12,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .example-full-width {
     width: 100%;
   }
+
+  .mat-row.hovered {
+    background: #eee;
+  }
+  
+  .mat-row.highlighted {
+    background: #999;
+  }
