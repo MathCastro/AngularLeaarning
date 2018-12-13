@@ -1,11 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened class="barra-lateral">
+      <nav>
+          <a class="icone" routerLink="/login"><mat-icon>home</mat-icon></a>
+      </nav>
+      
+  </mat-drawer>
+  <mat-drawer-content>
 <div style="text-align:center">
-  <h1>
-    Faça o {{ title }}!
-  </h1>
-  <nav>
-      <a routerLink="/login">Login</a>
-  </nav>
 </div>
-<router-outlet></router-outlet>
 
+<router-outlet></router-outlet>
+</mat-drawer-content>
+</mat-drawer-container>
