@@ -28,4 +28,17 @@ export class SusersService {
       }
     }
   }
+
+  alteraUsuario(id: number, login: string, senha:string){
+    var i;
+    for (i = 0; i < this.usuarios.length; i++){
+      if(this.usuarios[i].id == id){
+        this.usuarios[i]={
+          id: id,
+          login: login,
+          senha: senha
+        }
+      }
+    }
+  }
 }

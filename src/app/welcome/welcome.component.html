@@ -1,10 +1,46 @@
-<ul class="heroes">
+<div style='text-align: center;'>
+  <h1>Usuários</h1>
+  <!-- <mat-list role="list">
+    <mat-list-item *ngFor="let usuario of usuarios" role="listitem">Item 1</mat-list-item>
+  </mat-list> -->
+</div>
+
+<!-- <ul class="heroes">
     <li *ngFor="let usuario of usuarios">
       <a routerLink="/detail/{{usuario.id}}">
+        <a routerLink="/detail/{{usuario.id}}"></a>
         <span class="badge">{{usuario.id}}</span> {{usuario.login}}
       </a>
       <button class="delete" title="delete usuario"
       (click)="deleta(usuario)">x</button>
     </li>
-  </ul>
+  </ul> -->
 
+
+  
+  <table mat-table [dataSource]="usuarios" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="login">
+      <th mat-header-cell *matHeaderCellDef> Login </th>
+      <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="senha">
+      <th mat-header-cell *matHeaderCellDef> Senha </th>
+      <td mat-cell *matCellDef="let element"> {{element.senha}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row.id)"></tr>
+  </table>

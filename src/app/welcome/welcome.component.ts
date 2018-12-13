@@ -14,6 +14,7 @@ import { SusersService } from '../susers.service'
 export class WelcomeComponent implements OnInit {
 
   usuarios: Usuario[];
+  displayedColumns: string[] = ['id', 'login', 'senha'];
 
   constructor(
     private http: HttpClient,
@@ -33,6 +34,11 @@ export class WelcomeComponent implements OnInit {
 
   deleta(usuario: Usuario): void{
     this.SusersService.deletaUsuario(usuario.id);
+  }
+  
+  selectRow(row) {
+    var localizacao = '/detail/' + row
+    this.router.navigate([localizacao]);
   }
 
 }
