@@ -1,2 +1,9 @@
 form { margin: 0 auto; }
 button { margin: 0 auto; }
+
+.caixa-erro {  
+    width: 150px;
+    justify-self: center;
+    align-self: center;
+    background: rgb(235, 94, 94);
+}

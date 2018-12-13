@@ -20,23 +20,12 @@ export class SusersService {
     this.usuarios.push(usuario);
   }
 
-  logaUsuario(login: string, senha: string): any{
+  deletaUsuario(id: number): void{
     var i;
-    var flag = 0;
-    for (i = 0; i < USUARIOS.length; i++){
-      if(USUARIOS[i].login == login){
-        if(USUARIOS[i].senha == senha){
-          console.log("Bem vindo, " + USUARIOS[i].login);
-          flag = 1;
-        }else{
-          console.log("Senha incorreta.");
-          flag = 1;
-        }
+    for (i = 0; i < this.usuarios.length; i++){
+      if(this.usuarios[i].id == id){
+        this.usuarios.splice(i,1);
       }
     }
-    if(flag == 0){
-      console.log("Usuário não cadastrado.");
-    }
-    return flag;
   }
 }

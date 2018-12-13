@@ -15,6 +15,7 @@ import { SusersService } from '../susers.service'
 export class LoginComponent implements OnInit {
   @Input() usuario: Usuario;
   usuarios: Usuario[];
+  flag: boolean;
   constructor(
     private http: HttpClient,
     private location: Location,
@@ -37,12 +38,15 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/welcome']);
         }else{
           console.log("Senha incorreta.");
-          flag = 1;
+          flag = 0;
         }
       }
     }
     if(flag == 0){
       console.log("Usuário não cadastrado.");
+      this.flag = true ;
+    }else{
+      this.flag = false;
     }
   }
 
