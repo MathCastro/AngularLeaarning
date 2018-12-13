@@ -45,10 +45,11 @@ export class UserDetailComponent implements OnInit {
   }
 
   altera(login: string, senha: string): void {
-    if(login.length == 0){
-      this.SusersService.alteraUsuario(this.id, this.user.login, senha);
+    if(login.length == 0 && senha.length == 0){
     }else if(senha.length == 0){
       this.SusersService.alteraUsuario(this.id, login, this.user.senha);
+    }else if(login.length == 0){
+      this.SusersService.alteraUsuario(this.id, this.user.login, senha);
     }else{
       this.SusersService.alteraUsuario(this.id, login, senha);
     }
