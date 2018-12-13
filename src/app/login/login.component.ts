@@ -5,6 +5,7 @@ import { USUARIOS } from '../mock-usuarios';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { SusersService } from '../susers.service'
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private location: Location,
     private router: Router,
-    private SusersService: SusersService
+    private SusersService: SusersService,
+    public snackBar: MatSnackBar
     ) { }
 
   ngOnInit() {
